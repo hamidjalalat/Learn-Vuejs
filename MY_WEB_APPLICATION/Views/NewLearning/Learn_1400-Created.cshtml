@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 1400</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		Welcome {{ fullName }}!
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				fullName: null,
+
+			},
+
+			methods: {
+
+			},
+
+			beforeCreate: function () {
+
+				// !کار نمی‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			// OK
+			created: function () {
+
+				// کار می‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			// OK
+			beforeMount: function () {
+
+				// کار می‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			// OK
+			mounted: function () {
+
+				// کار می‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			beforeUpdate: function () {
+
+				// !کار نمی‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			updated: function () {
+
+				// !کار نمی‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			beforeDestroy: function () {
+
+				// !کار نمی‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+			destroyed: function () {
+
+				// !کار نمی‌کند
+				//this.fullName = `Mr. Dariush Tasdighi`
+
+			},
+
+		})
+
+		setTimeout(function () {
+
+			app.$destroy()
+
+		}, 30000)
+
+	</script>
+</body>
+</html>

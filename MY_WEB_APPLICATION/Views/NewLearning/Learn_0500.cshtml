@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 500</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app1" class="container" v-cloak>
+		{{ title }}
+		<br />
+		{{ message1 }}
+		@*<br />
+			{{ message2 }}*@
+	</div>
+
+	<hr />
+
+	<div id="app2" class="container" v-cloak>
+		{{ title }}
+		<br />
+		{{ message2 }}
+		@*<br />
+			{{ message1 }}*@
+	</div>
+
+	<hr />
+
+	<div class="container app3" v-cloak>
+		{{ message3 }}
+	</div>
+
+	<hr />
+
+	<div class="container app3" v-cloak>
+		{{ message3 }}
+	</div>
+
+	<hr />
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app1 = new Vue({
+
+			el: `#app1`,
+
+			data: {
+
+				message1: `Message (1)`,
+				title: `Hello, World (1)!`,
+
+			},
+
+		})
+
+		const app2 = new Vue({
+
+			el: `#app2`,
+
+			data: {
+
+				message2: `Message (2)`,
+				title: `Hello, World (2)!`,
+
+			},
+
+		})
+
+		const app3 = new Vue({
+
+			// فقط برای اولین عنصر کار می‌کند
+			el: `.app3`,
+
+			data: {
+
+				message3: `Message (3)`,
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Learn 1300</title>
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			<dtx-grid-vue v-bind:settings="settings">
+
+				<template slot="search">
+
+					<div class="form-horizontal">
+
+						<div class="row form-group">
+							<label for="firstName" class="col-sm-2 control-label">
+								First Name
+							</label>
+							<div class="col-sm-4">
+								<input type="Search" id="firstName" class="form-control" placeholder="" v-model="settings.searchItems.firstName" />
+							</div>
+
+							<label for="lastName" class="col-sm-2 control-label">
+								Last Name
+							</label>
+							<div class="col-sm-4">
+								<input type="Search" id="lastName" class="form-control" placeholder="" v-model="settings.searchItems.lastName" />
+							</div>
+						</div>
+
+					</div>
+
+				</template>
+
+			</dtx-grid-vue>
+		</div>
+	</div>
+
+	<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/Scripts/vue.min.js"></script>
+	<script src="~/Scripts/axios.min.js"></script>
+
+	<script src="~/Scripts/Dtx/dtx-components.js"></script>
+	<script src="~/Scripts/Dtx/dtx-grid-vue-culture.js"></script>
+	<script src="~/Scripts/Dtx/dtx-grid-vue.js"></script>
+
+	<script>
+
+		new Vue({
+
+			el: '#app',
+
+			data: {
+
+				settings: {
+
+					cultrue: dtxGridVueCulture,
+					url: '/LearningDtxGridVue/GetData',
+
+					displayRowNumber: true,
+					loadFirstPageAutomatically: true,
+
+					displayErrorMessages: false,
+					displayInformationMessages: false,
+
+					pageSize: 10,
+					pageSizes: [5, 10, 20, 50, 100],
+
+					columns: [
+						{
+							fieldName: 'isActive',
+							title: 'Active',
+							isSortable: true,
+
+							// New!
+							isCheckbox: true,
+						},
+						{
+							fieldName: 'firstName',
+							title: 'First Name',
+						},
+						{
+							fieldName: 'lastName',
+							title: 'Last Name',
+							isSortable: true,
+						},
+						{
+							fieldName: 'age',
+							title: 'Age',
+							isSortable: true,
+							template: function (item) {
+
+								let result =
+									'<span style="color: red;"><b>' + item.age + '</b></span>'
+
+								return result
+
+							},
+						},
+						{
+							fieldName: 'salary',
+							title: 'Salary',
+							isSortable: true,
+							firstSortDirection: 1,
+							sortFieldName: 'FirstName',
+						},
+					],
+
+					searchItems: {
+						lastName: null,
+						firstName: null,
+					},
+
+				},
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

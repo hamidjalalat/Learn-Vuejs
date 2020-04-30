@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 1100</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		Welcome {{ fullName }}!
+		<br />
+		Welcome {{ fullName.toLowerCase() }}!
+		<br />
+		Welcome {{ fullName.toUpperCase() }}!
+		<br />
+		<input type="text" v-model="fullName" />
+		<br />
+		<button type="button" v-on:click="doSomething()" class="btn btn-primary btn-sm">Do Something</button>
+
+		<hr />
+
+		@*Person Full Name: {{ person.fullName }}*@
+		@*<br />*@
+
+		<div v-if="person">
+			Person Full Name: {{ person.fullName }}
+		</div>
+
+		<br />
+		Person Full Name: {{ person?.fullName }}
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				fullName: `Mr. Dariush Tasdighi`,
+
+				//person: null,
+				//person: undefined,
+				person: {
+					fullName: `Mr. Dariush Tasdighi`,
+				},
+
+			},
+
+			methods: {
+
+				doSomething: function () {
+
+					this.fullName = `Mr. Ali Reza Alavi`
+
+				},
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

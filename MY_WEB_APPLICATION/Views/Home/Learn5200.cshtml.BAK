@@ -1,0 +1,83 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Index</title>
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="app">
+		Name
+		<br />
+		<input type="text" v-model="name" />
+
+		<br />
+		<button type="button" v-on:click="getMessage()">Get Message</button>
+
+		<h1 v-if="message">
+			{{ message }}
+		</h1>
+	</div>
+
+	<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/Scripts/vue.min.js"></script>
+	<script src="~/Scripts/axios.min.js"></script>
+
+	<script>
+
+		new Vue({
+
+			el: '#app',
+
+			data: {
+
+				name: null,
+				message: null,
+
+			},
+
+			methods: {
+
+				getMessage: function () {
+
+					let requestUrl =
+						'/Home/GetMessage5200?name=' + this.name
+
+					//let requestUrl =
+					//	'/Home/GetMessage5200?x=1&y=2&z=3'
+
+					axios.get(requestUrl)
+
+						.then(response => {
+
+							this.message = response.data.Message
+
+						})
+						.catch(error => {
+
+							console.log(error)
+
+						})
+						.finally(() => {
+
+						})
+
+				},
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

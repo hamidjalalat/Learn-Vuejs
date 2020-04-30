@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 900</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		<button type="button" v-on:click="display = !display">Toggle Display</button>
+
+		<br />
+		OR
+		<br />
+
+		<button type="button" v-on:click="toggleDisplay()">Toggle Display</button>
+
+		@*دستور ذیل غلط می‌باشد*@
+		@*<button type="button" v-on:click="this.display = !this.display">Toggle Display</button>*@
+
+		<hr />
+
+		<div v-show="display">
+			Hello, World (1)!
+		</div>
+
+		<div v-if="display">
+			Hello, World (2)!
+		</div>
+
+		<hr />
+
+		<div v-if="display">
+			Hello, World (3)!
+		</div>
+		<div v-else>
+			Hello, World (4)!
+		</div>
+
+		<hr />
+
+		Note: Now use Vue.js DevTools
+		<br />
+		https://chrome.google.com/webstore/category/extensions
+		<br />
+		Search [vue devtools] and install it!
+		<br />
+		Run Google Chrome -> ... -> More Tools -> Extensions -> Vue.js DevTools -> Details -> Toggle On: Allow access to file URLs
+		-> Restart Google Chrome -> We must use [vue.js] instead of [vue.min.js]
+		<br />
+		https://github.com/vuejs/vue-devtools
+		<br />
+		https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+	</div>
+
+	@*You are running Vue in development mode.*@
+	<script src="~/Scripts/vue.js"></script>
+
+	@*<script src="~/Scripts/vue.min.js"></script>*@
+
+	<script>
+
+		// Note: For activating DevTools if you are using [vue.min.js]!
+		//Vue.config.devtools = true
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				display: true,
+
+			},
+
+			methods: {
+
+				toggleDisplay: function () {
+
+					this.display = !this.display
+
+				},
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

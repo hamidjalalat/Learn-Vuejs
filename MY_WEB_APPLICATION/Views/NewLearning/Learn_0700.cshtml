@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 700</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		<h1>
+			Learning Directive!
+		</h1>
+
+		<hr />
+
+		<div>{{ message1 }}</div>
+
+		<hr />
+
+		<div v-text="message1"></div>
+		<div v-html="message1"></div>
+
+		<hr />
+
+		<div>{{ message2 }}</div>
+
+		<hr />
+
+		<div v-text="message2"></div>
+		<div v-html="message2"></div>
+
+		@*دستورات ذیل غلط است*@
+		@*<div v-text="{{ message2 }}"></div>*@
+		@*<div v-html="{{ message2 }}"></div>*@
+
+		<hr />
+
+		<img v-bind:src="myImage.source" v-bind:alt="myImage.alt" />
+
+		<hr />
+
+		<img :src="myImage.source" :alt="myImage.alt" />
+
+		<hr />
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				message1: `Hello, World!`,
+				message2: `<b>Hello, World!</b>`,
+
+				myImage: {
+
+					alt: `Dariush Tasdighi`,
+					source: `/Content/Images/DariushTasdighi.jpg`,
+
+				},
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

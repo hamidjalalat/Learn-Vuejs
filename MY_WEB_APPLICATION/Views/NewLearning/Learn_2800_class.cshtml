@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 2800</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+
+		/*.class1 {
+			color: red;
+		}
+
+		.class2 {
+			font-weight: bold;
+		}*/
+
+		div.class1 {
+			color: red;
+		}
+
+		div.class2 {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		<h3>
+			Class Bindings
+		</h3>
+
+		<hr />
+
+		<div class="class1">
+			Hello, World (1)!
+		</div>
+
+		<hr />
+
+		<div class="class2">
+			Hello, World (2)!
+		</div>
+
+		<hr />
+
+		<div class="class1 class2">
+			Hello, World (3)!
+		</div>
+
+		<hr />
+
+		<input type="checkbox" v-model="hasSomeClass1" />
+		Has Some Class 1
+
+		<br />
+
+		<div v-bind:class="{ class1: hasSomeClass1 }">
+			Hello, World (4)!
+		</div>
+
+		<hr />
+
+		<input type="checkbox" v-model="hasSomeClass2" />
+		Has Some Class 2
+
+		<br />
+
+		<input type="checkbox" v-model="hasSomeClass3" />
+		Has Some Class 3
+
+		<br />
+
+		<div v-bind:class="{ class1: hasSomeClass2, class2: hasSomeClass3 }">
+			Hello, World (5)!
+		</div>
+
+		<hr />
+
+		<button type="button" class="btn btn-primary btn-sm" v-on:click="toggleClass1()">Toggle</button>
+
+		<br />
+
+		<div v-bind:class="cssClass">
+			Hello, World (6)!
+		</div>
+
+		<hr />
+
+		<div v-bind:class="[cssClass1, cssClass2]">
+			Hello, World (7)!
+		</div>
+
+		<hr />
+
+		<button type="button" class="btn btn-primary btn-sm" v-on:click="toggleClass2()">Toggle</button>
+
+		<br />
+
+		<div v-bind:class="[someBoolean ? cssClass1 : cssClass2]">
+			Hello, World (8)!
+		</div>
+
+		<hr />
+
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				hasSomeClass1: false,
+				hasSomeClass2: false,
+				hasSomeClass3: false,
+
+				cssClass: `class1`,
+
+				cssClass1: `class1`,
+				cssClass2: `class2`,
+
+				someBoolean: true,
+
+			},
+
+			methods: {
+
+				toggleClass1: function () {
+
+					if (this.cssClass === `class1`) {
+
+						this.cssClass = `class2`
+
+					}
+					else {
+
+						this.cssClass = `class1`
+
+					}
+
+				},
+
+				toggleClass2: function () {
+
+					this.someBoolean = !this.someBoolean
+
+				},
+
+			},
+
+			computed: {
+
+			},
+
+			created: function () {
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

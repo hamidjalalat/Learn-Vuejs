@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+@*<html id="app">*@
+<html>
+<head>
+    <title>Learn 200</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />*@
+</head>
+@*<body id="app">*@
+<body>
+    <div id="app">
+
+        <select v-model="idbinde">
+            <option v-bind:value="null">select</option>
+            <option v-for="item in list" v-bind:value="item.id">{{item.name}}</option>
+        </select>
+        <div>{{nn}}</div>
+    </div>
+    <script src="/Scripts/vue.js"></script>
+    @*<script src="/Scripts/vue.min.js"></script>*@
+    @*<script src="~/Scripts/vue.js"></script>*@
+    @*<script src="~/Scripts/vue.min.js"></script>*@
+    <!-- development version, includes helpful console warnings -->
+    @*<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>*@
+    <!-- production version, optimized for size and speed -->
+    @*<script src="https://cdn.jsdelivr.net/npm/vue"></script>*@
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                list: [{ id: 1, name: 'ali' }, { id: 2, name: 'ahmad' }, { id: 3, name: 'mamad' }],
+                idbinde:null,
+            },
+
+        });
+
+
+
+    </script>
+</body>
+</html>

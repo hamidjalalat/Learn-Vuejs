@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 2100</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		<h3>
+			Learning Comuted Property (Read Only Property)!
+		</h3>
+
+		<h5>
+			Note: Computed Property definition is similar to methods, but you cannot pass input parameters!
+		</h5>
+
+		<p>
+			Google Chrome ->
+			Inspect Elements ->
+			Breakpoint in [z] function ->
+			Click on [doSomething] button and Debug it!
+		</p>
+
+		<input type="text" v-model="x" />
+		<input type="text" v-model="y" />
+
+		<br />
+
+		@*!دقت کنید که دستور ذیل کار نمی‌کند ولی در درس بعد اینگونه نیست*@
+		@*{{ z }}*@
+
+		{{ z() }}
+
+		<br />
+
+		<button type="button" v-on:click="doSomething()">Do something!</button>
+
+		<br />
+
+		{{ t }}
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				x: 10,
+				y: 20,
+				t: 30,
+
+			},
+
+			methods: {
+
+				z: function () {
+
+					let result =
+						this.x + this.y
+
+					return result
+
+				},
+
+				doSomething: function () {
+
+					this.t++
+
+				},
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

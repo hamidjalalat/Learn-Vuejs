@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 1300</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		Welcome {{ fullName }}!
+		<br />
+		<button type="button" v-on:click="doSomething()" class="btn btn-primary">Click Me!</button>
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				fullName: `Mr. Dariush Tasdighi`,
+
+			},
+
+			methods: {
+
+				doSomething: function () {
+
+					this.fullName = `Mr. Ali Reza Alavi`
+
+				},
+
+			},
+
+			beforeCreate: function () {
+
+				console.log(`Before Created!`)
+
+			},
+
+			created: function () {
+
+				console.log(`Created!`)
+
+			},
+
+			beforeMount: function () {
+
+				console.log(`Before Mount!`)
+
+			},
+
+			mounted: function () {
+
+				console.log(`Mounted!`)
+
+			},
+
+			beforeUpdate: function () {
+
+				console.log(`Before Update!`)
+
+			},
+
+			updated: function () {
+
+				console.log(`Updated!`)
+
+			},
+
+			beforeDestroy: function () {
+
+				console.log(`Before Destroy!`)
+
+			},
+
+			destroyed: function () {
+
+				console.log(`Destroyed!`)
+
+			},
+
+		})
+
+		setTimeout(function () {
+
+			app.$destroy()
+
+		}, 30000)
+
+	</script>
+</body>
+</html>

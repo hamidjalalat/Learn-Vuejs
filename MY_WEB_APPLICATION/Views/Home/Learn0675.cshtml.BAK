@@ -1,0 +1,111 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Index</title>
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="app1">
+		<div>
+			{{ message1 }}
+		</div>
+		<div>
+			{{ message2 }}
+		</div>
+		<ul>
+			<todo-item></todo-item>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div id="app2">
+		<div>
+			{{ message1 }}
+		</div>
+		<div>
+			{{ message2 }}
+		</div>
+		<ul>
+			<todo-item></todo-item>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="app3">
+		<div>
+			{{ message3 }}
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="app3">
+		<div>
+			{{ message3 }}
+		</div>
+	</div>
+
+	<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		Vue.component('todo-item', {
+
+			template: '<li>This is a todo item!</li>',
+
+		})
+
+		new Vue({
+
+			el: '#app1',
+
+			data: {
+
+				message1: 'Message (1)'
+
+			},
+
+		})
+
+		new Vue({
+
+			el: '#app2',
+
+			data: {
+
+				message2: 'Message (2)'
+
+			},
+
+		})
+
+		new Vue({
+
+			el: '.app3',
+
+			data: {
+
+				message3: 'Message (3)'
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

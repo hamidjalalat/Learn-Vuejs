@@ -1,0 +1,64 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Index</title>
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="app">
+		<something v-bind:message="message1"></something>
+	</div>
+
+	<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		Vue.component('something', {
+
+			props: ['message'],
+
+			data: function() {
+
+				return ({
+
+					message2: 'Tasdighi'
+
+				})
+
+			},
+
+			template: '<div>Hello, {{ message }} {{ message2 }}!</div>',
+
+			// TODO: چک شود
+			//template: '<template>Hello, {{ message }}!</template>',
+
+		})
+
+		new Vue({
+
+			el: '#app',
+
+			data: {
+
+				message1: 'Dariush'
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

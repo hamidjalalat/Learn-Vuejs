@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 1200</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		<div>
+			Welcome {{ fullName }}!
+		</div>
+		<br />
+		Welcome <b v-text="fullName"></b>!
+		<br />
+		Welcome <b>{{ fullName }}></b>!
+		<br />
+		<input type="text" v-model="fullName" />
+		<br />
+		<input type="text" v-model="fullName" />
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				fullName: `Mr. Dariush Tasdighi`,
+
+			},
+
+			methods: {
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

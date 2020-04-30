@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.5.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.5.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F0561F6-85DC-468F-A717-DC5747DDBE79}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MY_WEB_APPLICATION</RootNamespace>
+    <AssemblyName>MY_WEB_APPLICATION</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Documents\Readme.txt" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\DariushTasdighi.jpg" />
+    <Content Include="Content\NewSite.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\NewSite.fa-IR.css" />
+    <Content Include="Content\Site.fa-IR.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\Yekan.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\axios.js" />
+    <Content Include="Scripts\axios.min.js" />
+    <Content Include="Content\bootstrap-rtl.css.map" />
+    <Content Include="fonts\Yekan.eot" />
+    <Content Include="fonts\Yekan.ttf" />
+    <Content Include="fonts\Yekan.woff" />
+    <Content Include="fonts\YekanWeb-Regular.woff" />
+    <Content Include="fonts\Samim-Bold-FD.eot" />
+    <Content Include="fonts\Samim-Bold-FD.ttf" />
+    <Content Include="fonts\Samim-Bold-FD.woff" />
+    <Content Include="fonts\Samim-Bold-FD.woff2" />
+    <Content Include="fonts\Samim-FD.eot" />
+    <Content Include="fonts\Samim-FD.ttf" />
+    <Content Include="fonts\Samim-FD.woff" />
+    <Content Include="fonts\Samim-FD.woff2" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Dtx\dtx-grid-vue-culture.fa-IR.js" />
+    <Content Include="Scripts\Dtx\dtx-grid-vue-culture.js" />
+    <Content Include="Scripts\Dtx\dtx-grid-vue.js" />
+    <Content Include="Scripts\Dtx\dtx-components.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\global-components.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
+    <Content Include="Scripts\Learning\dtx-library.js" />
+    <Content Include="Scripts\Learning\learn_7700.js" />
+    <Content Include="Scripts\Learning\learn_6100.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.0.min.map" />
+    <None Include="Scripts\vue.js.BAK" />
+    <None Include="Scripts\vue.min.js.BAK" />
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LearningDtxGridVueController.cs" />
+    <Compile Include="Controllers\NewLearningController.cs" />
+    <Compile Include="Dtx\Text\Utility.cs" />
+    <Compile Include="Dtx\ViewModels\ResultViewModel.cs" />
+    <Compile Include="Dtx\ViewModels\ResultWithDataViewModel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\BaseController.cs" />
+    <Compile Include="Infrastructure\JsonNetResult.cs" />
+    <Compile Include="Infrastructure\Utility.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\General\InputGridViewModel.cs" />
+    <Compile Include="ViewModels\General\JsonResultViewModel.cs" />
+    <Compile Include="ViewModels\General\JsonResultForGridViewModel.cs" />
+    <Compile Include="ViewModels\General\JsonResultWithDataViewModel.cs" />
+    <Compile Include="ViewModels\Home\GetData6200InputViewModel.cs" />
+    <Compile Include="ViewModels\LearningDtxGridVue\InputGetDataViewModel.cs" />
+    <Compile Include="ViewModels\MessageViewModel.cs" />
+    <Compile Include="ViewModels\NewLearning\GetPersonDetailsViewModel.cs" />
+    <Compile Include="ViewModels\PersonViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Learn0500.cshtml.BAK" />
+    <None Include="Views\Home\Learn0100.cshtml.BAK" />
+    <None Include="Views\Home\Learn0200.cshtml.BAK" />
+    <None Include="Views\Home\Learn0300.cshtml.BAK" />
+    <None Include="Views\Home\Learn0400.cshtml.BAK" />
+    <None Include="Views\Home\Learn0600.cshtml.BAK" />
+    <None Include="Views\Home\Learn0700.cshtml.BAK" />
+    <None Include="Views\Home\Learn0800.cshtml.BAK" />
+    <None Include="Views\Home\Learn5000.cshtml.BAK" />
+    <None Include="Views\Home\Learn5100.cshtml.BAK" />
+    <None Include="Views\Home\Learn5200.cshtml.BAK" />
+    <None Include="Views\Home\Learn5300.cshtml.BAK" />
+    <None Include="Views\Home\Learn5400.cshtml.BAK" />
+    <None Include="Views\Home\Learn5500.cshtml.BAK" />
+    <None Include="Views\Home\Learn5600.cshtml.BAK" />
+    <Content Include="Views\Home\Learn6000.cshtml" />
+    <Content Include="Views\Home\Learn6100.cshtml" />
+    <Content Include="Views\Home\Learn6200.cshtml" />
+    <None Include="Views\Home\Learn0650.cshtml.BAK" />
+    <None Include="Views\Home\Learn5350.cshtml.BAK" />
+    <None Include="Views\Home\Learn5700.cshtml.BAK" />
+    <None Include="Views\Home\Learn0550.cshtml.BAK" />
+    <None Include="Views\Home\Learn0575.cshtml.BAK" />
+    <None Include="Views\Home\Learn0583.cshtml.BAK" />
+    <None Include="Views\Home\Learn0850.cshtml.BAK" />
+    <None Include="Views\Home\Learn0675.cshtml.BAK" />
+    <None Include="Views\Home\Learn0750.cshtml.BAK" />
+    <None Include="Views\Home\Learn0875.cshtml.BAK" />
+    <None Include="Views\Home\Learn0900.cshtml.BAK" />
+    <None Include="Views\Home\Learn0910.cshtml.BAK" />
+    <None Include="Views\Home\Learn0920.cshtml.BAK" />
+    <None Include="Views\Home\Learn0930.cshtml.BAK" />
+    <None Include="Views\Home\Learn0940.cshtml.BAK" />
+    <None Include="Views\Home\Learn0950.cshtml.BAK" />
+    <None Include="Views\Home\Learn0960.cshtml.BAK" />
+    <Content Include="Views\Home\Learn7000.cshtml" />
+    <None Include="Views\Home\Test.cshtml.BAK" />
+    <Content Include="Views\Home\Learn7100.cshtml" />
+    <Content Include="Views\Home\Learn7200.cshtml" />
+    <Content Include="Views\Home\Learn7300.cshtml" />
+    <None Include="Views\Home\Learn5800.cshtml.BAK" />
+    <Content Include="Views\Home\Learn5900.cshtml" />
+    <Content Include="Views\Home\Learn7400.cshtml" />
+    <Content Include="Views\Home\Learn7500.cshtml" />
+    <Content Include="Views\Home\Learn7600.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0100.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0200.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0400.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0500.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0600.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0700.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0800.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0900.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1000.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1100.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Index.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_0300.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1200.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1300.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1400.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1500.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1600.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1700.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_5000.cshtml" />
+    <Content Include="Views\LearningDtxGridVue\Learn_1800.cshtml" />
+    <Content Include="Views\Home\Learn6300.cshtml" />
+    <None Include="Views\Home\Temp.cshtml.BAK" />
+    <None Include="Views\Home\Learn0050.cshtml.BAK" />
+    <None Include="Views\Home\Learn0525.cshtml.BAK" />
+    <None Include="Views\Home\Learn0935.cshtml.BAK" />
+    <None Include="Views\Home\Learn0932.cshtml.BAK" />
+    <None Include="Views\Home\Learn0933.cshtml.BAK" />
+    <None Include="Views\Home\Learn0970.cshtml.BAK" />
+    <Content Include="Views\NewLearning\Learn_0300.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0400.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0800.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0200.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1200.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2400.cshtml" />
+    <Content Include="Views\NewLearning\Learn_0100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1300-Created.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1800.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2000-سبد خرید.cshtml" />
+    <Content Include="Views\NewLearning\Learn_1400-Created.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2200_Computed.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2500-DropDownwithCard.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2600-Learn_2500-DropDownwithCardnorepet.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3100Hide_Show.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3200.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3300_Filp.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2300_Dropdown.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2800_class.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3400-Start-Axios.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3800.cshtml" />
+    <Content Include="Views\NewLearning\Learn_3900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4200.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4300.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4400.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4700EndAxios.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4800-StartComponet.cshtml" />
+    <Content Include="Views\NewLearning\Learn_4900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5200.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5300-Props.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5400.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5800.cshtml" />
+    <Content Include="Views\NewLearning\Learn_5900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6200-Compnent-Data.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6300.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6400.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6800.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7200.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7300.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7400.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6650.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6450.cshtml" />
+    <Content Include="Views\NewLearning\Learn_6475.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7500.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7600.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7700.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7800.cshtml" />
+    <Content Include="Views\NewLearning\Learn_7900.cshtml" />
+    <Content Include="Views\NewLearning\Learn_8000.cshtml" />
+    <Content Include="Views\NewLearning\Learn_8100.cshtml" />
+    <Content Include="Views\NewLearning\Learn_2300_Dropdown_jalalat.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49259</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49260/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.5.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.5.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

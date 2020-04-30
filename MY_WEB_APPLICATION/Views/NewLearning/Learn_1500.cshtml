@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 1500</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Count</th>
+			</tr>
+			<tr v-for="item in items">
+				<td>{{ item.name }}</td>
+				<td>{{ item.price }}</td>
+				<td>{{ item.count }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const products =
+			[
+				{ name: `Name 1`, price: 10, count: 1 },
+				{ name: `Name 2`, price: 20, count: 1 },
+				{ name: `Name 3`, price: 30, count: 1 },
+				{ name: `Name 4`, price: 40, count: 1 },
+				{ name: `Name 5`, price: 50, count: 1 },
+			]
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				items: products,
+
+				//items: [],
+				//items: null,
+				//items: undefined,
+
+			},
+
+			methods: {
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

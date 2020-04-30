@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Learn 600</title>
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container" v-cloak>
+		Full Name: {{ firstName }} {{ lastName }}
+		<br />
+		Full Name: {{ firstName + ` ` + lastName }}
+		<br />
+		Full Name: {{ firstName.toLowerCase() + ` ` + lastName.toLowerCase() }}
+		<br />
+		Full Name: {{ firstName.toUpperCase() + ` ` + lastName.toUpperCase() }}
+		<br />
+		Full Name: {{ person.firstName.toUpperCase() + ` ` + person.lastName.toUpperCase() }}
+	</div>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		const app = new Vue({
+
+			el: `#app`,
+
+			data: {
+
+				firstName: `Dariush`,
+				lastName: `Tasdighi`,
+
+				person: { firstName: `Dariush`, lastName: `Tasdighi` },
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>

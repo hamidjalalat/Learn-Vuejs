@@ -1,0 +1,94 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Index</title>
+
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="app">
+		Dollars:
+		<input type="number" v-model="dollars" />
+		<hr />
+		<currency-converter v-bind:input-dollars="dollars"></currency-converter>
+	</div>
+
+	<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+
+	<script src="~/Scripts/vue.js"></script>
+
+	<script>
+
+		Vue.component('currency-converter', {
+
+			props: ['input-dollars'],
+
+			data: function() {
+
+				return ({
+
+					result: 0,
+					rate: 150000,
+
+				})
+
+			},
+
+			methods: {
+
+				calculate: function () {
+
+					this.result =
+						this.rate * this.inputDollars;
+
+				},
+
+			},
+
+			//template: '<div><button type="button" v-on:click="calculate()">Calculate</button><br />Result: {{ result }}</div>',
+
+			//template:
+			//	'<div>
+			//	< button type="button" v-on: click="calculate()" >
+			//	Calculate</button> <br />Result: {{ result }}</div > ',
+
+			template:
+				`<div>
+					<button type="button" v-on:click="calculate()">Calculate</button>
+					<br />
+					Result: {{ result }}
+				</div>`,
+
+			// Note: You should have root element in template!
+			//template:
+			//	`<button type="button" v-on:click="calculate()">Calculate</button>
+			//	<br />
+			//	Result: {{ result }}`,
+
+		})
+
+		new Vue({
+
+			el: '#app',
+
+			data: {
+
+				dollars: 100
+
+			},
+
+		})
+
+	</script>
+</body>
+</html>
